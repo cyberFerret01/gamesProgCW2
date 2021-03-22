@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BlockMovement : MonoBehaviour
 {
- 
+    private float speedUp;
     // Start is called before the first frame update
     void Start()
     {
-       
-
+        speedUp = 1.0F;
     }
 
 
@@ -23,93 +22,52 @@ public class BlockMovement : MonoBehaviour
         bool verDown = Input.GetButtonDown("Vertical");
         bool verHeld = Input.GetButton("Vertical");
         bool verUp = Input.GetButtonUp("Vertical");
-        bool jumDown = Input.GetButtonDown("Jump");
-        bool jumHeld = Input.GetButton("Jump");
-        bool jumUp = Input.GetButtonUp("Jump");
-        
 
-
-        float movementTime = Time.deltaTime * 4;
-
-       
-
-
-
+        float movementTime = Time.deltaTime * 5 * speedUp;
 
         if (horDown && Input.GetAxisRaw("Horizontal") > 0)
         {
-            //transform.rotation = Quaternion.Euler(0, 90, 0);
-            //transform.Rotate(0, 180, 0, Space.World);
             transform.Translate(Vector3.forward * movementTime);
-           
-
         }
         if (horHeld && Input.GetAxisRaw("Horizontal") > 0)
         {
-           
             transform.Translate(Vector3.forward * movementTime);
-           
-
         }
         if (horDown && Input.GetAxisRaw("Horizontal") < 0)
         {
-           
-            // transform.Rotate(0, 0, 0, Space.World);
             transform.Translate(Vector3.back * movementTime);
-            
-
         }
         if (horHeld && Input.GetAxisRaw("Horizontal") < 0)
-        {
-           
+        { 
             transform.Translate(Vector3.back * movementTime);
-           
-
-        }
-
-        if (horUp)
-        {
-           
         }
 
         if (verDown && Input.GetAxisRaw("Vertical") < 0)
         {
-           
-            //transform.Rotate(0, 90, 0, Space.World);
             transform.Translate(Vector3.right * movementTime);
-            
-
         }
         if (verHeld && Input.GetAxisRaw("Vertical") < 0)
         {
-           
             transform.Translate(Vector3.right * movementTime);
-            
-
         }
         if (verDown && Input.GetAxisRaw("Vertical") > 0)
         {
-            
-            //   transform.Rotate(0, -90, 0, Space.World);
             transform.Translate(Vector3.left * movementTime);
-            
-
         }
         if (verHeld && Input.GetAxisRaw("Vertical") > 0)
         {
-           
             transform.Translate(Vector3.left * movementTime);
-            
-
-        }
-        if (verUp)
-        {
-            
-
         }
 
+    }
 
+    public void SpeedUp()
+    {
+        speedUp = 3.0F;
+    }
 
-
+    public void SlowDown()
+    {
+        speedUp = 1.0F;
     }
 }

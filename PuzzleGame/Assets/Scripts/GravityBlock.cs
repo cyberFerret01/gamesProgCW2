@@ -20,6 +20,8 @@ public class GravityBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Debug.Log("fromGravBlock: " + gravityInverted);
         if (gravityInverted == true)
         {
             //Physics.gravity = new Vector3(0, -1.0F, 0);
@@ -29,12 +31,22 @@ public class GravityBlock : MonoBehaviour
         else
         {
             gravityInverted = false;
+            m_Rigidbody.useGravity = true;
         }
     }
 
-    public void InvertGravity()
+    public bool getIsInverted()
+    {
+        return gravityInverted;
+    }
+
+    public void InvertGravityTrue()
     {
         gravityInverted = true;
-        Debug.Log("yes");
+    }
+
+    public void InvertGravityFalse()
+    {
+        gravityInverted = false;
     }
 }

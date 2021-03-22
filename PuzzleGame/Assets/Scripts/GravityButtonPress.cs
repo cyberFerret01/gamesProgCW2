@@ -28,7 +28,7 @@ public class GravityButtonPress : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            player.GetComponent<GravityBlock>().InvertGravity();
+            player.GetComponent<GravityBlock>().InvertGravityTrue();
         }
     }
 
