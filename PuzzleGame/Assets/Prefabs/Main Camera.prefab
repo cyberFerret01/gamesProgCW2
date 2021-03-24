@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 664298106617761981}
   - component: {fileID: 664298106617761980}
   - component: {fileID: 664298106617761979}
+  - component: {fileID: 2978615148993168321}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -97,6 +98,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 0}
+  xrotation: 1
+  speed: 2
+  ydist: 4
+  isInverted: 0
+--- !u!114 &2978615148993168321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664298106617761983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87af450513e9e143b146a3a00708643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 1745078269273542438, guid: 892d978bd7287a54a8abea576b88abd9,
+    type: 3}
   xrotation: 1
   speed: 2
   ydist: 4
