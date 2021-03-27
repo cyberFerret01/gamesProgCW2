@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4523345806760382743}
   - component: {fileID: 4523345806760382740}
   - component: {fileID: 4523345806760382739}
-  - component: {fileID: 8664107198098125205}
   m_Layer: 0
   m_Name: Shrink Button
   m_TagString: Untagged
@@ -1841,15 +1840,3 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &8664107198098125205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4523345806760382741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b35531b9b6a3d4d8ee3f080d268e56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
