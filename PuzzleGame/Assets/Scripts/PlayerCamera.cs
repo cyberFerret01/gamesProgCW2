@@ -31,6 +31,9 @@ public class PlayerCamera : MonoBehaviour
 
     void LateUpdate()
     {
+        objectToFollow = GameObject.FindGameObjectWithTag("Player");
+        Player = objectToFollow.transform;
+        centrePoint = Player;   
 
         CamControl();
         ViewObstructed();

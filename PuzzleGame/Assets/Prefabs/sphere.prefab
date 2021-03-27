@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6204546702768541745}
   - component: {fileID: 6204546702768541746}
   - component: {fileID: 6204546702768541747}
-  - component: {fileID: 6204546702768541756}
   - component: {fileID: 6204546702768541748}
   - component: {fileID: 6204546702768541744}
   - component: {fileID: 6204546702768541751}
@@ -21,6 +20,7 @@ GameObject:
   - component: {fileID: 6204546702768541705}
   - component: {fileID: 6204546702768541706}
   - component: {fileID: 6204546702768541707}
+  - component: {fileID: 2293006273323929689}
   m_Layer: 8
   m_Name: sphere
   m_TagString: Player
@@ -89,19 +89,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &6204546702768541756
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6204546702768541757}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6204546702768541748
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b290a72dc614f7d48a05b884b145c201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 0
 --- !u!114 &6204546702768541751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +215,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a004f8a2566a5604796df48840fd8b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &2293006273323929689
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204546702768541757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
