@@ -10,9 +10,12 @@ public class switchShape : MonoBehaviour
     public GameObject prism;
     public Vector3 offset;
     public Vector3 offset2;
-    public Transform thisObject;
+    public Transform Player;
+    Vector3 originalPos;
 
-    //Vector3 originalPos;
+
+
+    public Transform centrePoint;
     public float pressRange = 0.5f;
     public LayerMask playerLayers;
 
@@ -23,27 +26,27 @@ public class switchShape : MonoBehaviour
         sphere.SetActive(false);
         cone.SetActive(false);
         prism.SetActive(false);
-        //originalPos = new Vector3(thisObject.transform.position.x, thisObject.transform.position.y, thisObject.transform.position.z);
+        originalPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
     }
     void shapeCollider()
     {
-        if (thisObject.gameObject.tag == "SWC")
+        if (Player.gameObject.tag == "SWC")
         {
-            if (cube.activeSelf == true) //Cube->Sphere
+            if (cube.active == true) //Cube->Sphere
             {
                 sphere.transform.position = cube.transform.position;
                 cube.SetActive(false);
                 sphere.SetActive(true);
             }
-            else if (cone.activeSelf == true) //Cone->Sphere
+            else if (cone.active == true) //Cone->Sphere
             {
                 sphere.transform.position = cone.transform.position;
                 cone.SetActive(false);
                 sphere.SetActive(true);
             }
 
-            else if (prism.activeSelf == true) //Prism->Sphere
+            else if (prism.active == true) //Prism->Sphere
             {
                 sphere.transform.position = prism.transform.position;
                 prism.SetActive(false);
@@ -52,22 +55,22 @@ public class switchShape : MonoBehaviour
 
         }
 
-        else if (thisObject.gameObject.tag == "SWS")
+        else if (Player.gameObject.tag == "SWS")
         {
-            if (sphere.activeSelf == true) //Sphere->Cube
+            if (sphere.active == true) //Sphere->Cube
             {
                 cube.transform.position = sphere.transform.position;
                 sphere.SetActive(false);
                 cube.SetActive(true);
             }
-            else if (cone.activeSelf == true) //Cone->Cube
+            else if (cone.active == true) //Cone->Cube
             {
                 cube.transform.position = cone.transform.position;
                 cone.SetActive(false);
                 cube.SetActive(true);
             }
 
-            else if (prism.activeSelf == true) //Prism->Cube
+            else if (prism.active == true) //Prism->Cube
             {
                 cube.transform.position = cube.transform.position;
                 prism.SetActive(false);
@@ -76,22 +79,22 @@ public class switchShape : MonoBehaviour
 
         }
 
-        else if (thisObject.gameObject.tag == "SWCN")
+        else if (Player.gameObject.tag == "SWCN")
         {
-            if (sphere.activeSelf == true) //Sphere->Cone
+            if (sphere.active == true) //Sphere->Cone
             {
                 cone.transform.position = sphere.transform.position;
                 sphere.SetActive(false);
                 cone.SetActive(true);
             }
-            else if (cube.activeSelf == true) //Cube->Cone
+            else if (cube.active == true) //Cube->Cone
             {
                 cone.transform.position = cube.transform.position;
                 cube.SetActive(false);
                 cone.SetActive(true);
             }
 
-            else if (prism.activeSelf == true) //Prism->Cone
+            else if (prism.active == true) //Prism->Cone
             {
                 cone.transform.position = prism.transform.position;
                 prism.SetActive(false);
@@ -100,22 +103,22 @@ public class switchShape : MonoBehaviour
 
         }
 
-        else if (thisObject.gameObject.tag == "SWP")
+        else if (Player.gameObject.tag == "SWP")
         {
-            if (sphere.activeSelf == true) //Sphere->Prism
+            if (sphere.active == true) //Sphere->Prism
             {
                 prism.transform.position = sphere.transform.position;
                 sphere.SetActive(false);
                 prism.SetActive(true);
             }
-            else if (cube.activeSelf == true) //Cube->Prism
+            else if (cube.active == true) //Cube->Prism
             {
                 prism.transform.position = cube.transform.position;
                 cube.SetActive(false);
                 prism.SetActive(true);
             }
 
-            else if (cone.activeSelf == true) //Cone->Prism
+            else if (cone.active == true) //Cone->Prism
             {
                 prism.transform.position = cone.transform.position;
                 cone.SetActive(false);
@@ -163,9 +166,9 @@ public class switchShape : MonoBehaviour
         }
         */
 
-        Collider[] playersTouching = Physics.OverlapSphere(transform.position, 2, playerLayers);
+        Collider[] playersTouching = Physics.OverlapSphere(centrePoint.position, 2, playerLayers);
 
-        foreach (Collider thisObject in playersTouching)
+        foreach (Collider player in playersTouching)
         {
             shapeCollider();
         }
