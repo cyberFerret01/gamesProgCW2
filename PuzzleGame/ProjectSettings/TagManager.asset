@@ -6,10 +6,6 @@ TagManager:
   tags:
   - Yellow
   - Pink
-  - SWS
-  - SWC
-  - SWCN
-  - SWP
   layers:
   - Default
   - TransparentFX

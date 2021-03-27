@@ -12,7 +12,7 @@ public class ShrinkBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scaleChange = new Vector3(+0.002f, +0.002f, +0.002f);
+        scaleChange = new Vector3(-0.002f, -0.002f, -0.002f);
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class ShrinkBlock : MonoBehaviour
     {
         if (isShrinking == true && player.transform.localScale.y >= 0.5f)
         {
-            player.transform.localScale -= scaleChange;
+            player.transform.localScale += scaleChange;
         }
         else
         {
