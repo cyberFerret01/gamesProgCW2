@@ -19,6 +19,9 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
+        
+       objectToFollow = GameObject.FindGameObjectWithTag("Player");
+
         isInverted = objectToFollow.GetComponent<GravityBlock>().getIsInverted();
         float interpolation = speed * Time.deltaTime;
 
