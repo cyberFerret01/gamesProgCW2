@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 1745078269273542452}
   - component: {fileID: 1745078269273542454}
   - component: {fileID: 1745078269273542453}
-  - component: {fileID: 3856604717445842435}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -481,20 +480,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centrePoint: {fileID: 1745078270145345291}
   passThroughRange: 0.7
---- !u!114 &3856604717445842435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745078269273542438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1e6ac80ed07a4849803098d50d80494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatar1: {fileID: 0}
-  avatar2: {fileID: 0}
 --- !u!1 &1745078270145345290
 GameObject:
   m_ObjectHideFlags: 0

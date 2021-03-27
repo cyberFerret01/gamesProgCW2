@@ -28,7 +28,7 @@ public class ShrinkButtonPress : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            player.GetComponent<GrowBlock>().Shrink(new Vector3(+0.002f, +0.002f, +0.002f));
+            player.GetComponent<ShrinkBlock>().Shrink();
         }
     }
     

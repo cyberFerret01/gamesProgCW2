@@ -8,7 +8,6 @@ public class GrowBlock : MonoBehaviour
     public GameObject player;
     private bool isGrowing = false;
     private Vector3 scaleChange;
-    private bool isShrinking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,27 +26,10 @@ public class GrowBlock : MonoBehaviour
         {
             isGrowing = false;
         }
-
-        if (isShrinking == true && player.transform.localScale.y >= 0.5f)
-        {
-            player.transform.localScale -= scaleChange;
-        }
-        else
-        {
-            isShrinking = false;
-        }
     }
 
-    public void Shrink(Vector3 magnitude)
+    public void Grow()
     {
-        scaleChange = magnitude;
-        isShrinking = true;
-        Debug.Log("yes");
-    }
-
-    public void Grow(Vector3 magnitude)
-    {
-        scaleChange = magnitude;
         isGrowing = true;
         Debug.Log("yes");
     }
