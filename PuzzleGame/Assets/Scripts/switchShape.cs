@@ -29,7 +29,7 @@ public class switchShape : MonoBehaviour
         originalPos = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
 
     }
-    void OnCollisionEnter(Collision Player)
+    void shapeCollider()
     {
         if (Player.gameObject.tag == "SWC")
         {
@@ -170,40 +170,11 @@ public class switchShape : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            Debug.LogError("button con");
-
-            if (sphere.active == true) //Sphere->Cone
-            {
-                cone.transform.position = sphere.transform.position;
-                sphere.SetActive(false);
-                cone.SetActive(true);
-            }
-            else if (cube.active == true) //Cube->Cone
-            {
-                cone.transform.position = cube.transform.position;
-                cube.SetActive(false);
-                cone.SetActive(true);
-            }
-
-            else if (prism.active == true) //Prism->Cone
-            {
-                cone.transform.position = prism.transform.position;
-                prism.SetActive(false);
-                cone.SetActive(true);
-            }
-
+            shapeCollider();
         }
     }
 
 
-    private void OnDrawGizmos()
-    {
 
-        
-
-        Gizmos.color = Color.red;
-        //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.    
-        Gizmos.DrawWireSphere(transform.position, 1);
-    }
 
 }
