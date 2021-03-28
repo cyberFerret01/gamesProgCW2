@@ -46,4 +46,10 @@ public class PlayerCamera : MonoBehaviour
         
     }
 
+    public void Switch(GameObject player)
+    {
+        Debug.Log("Switch");
+        objectToFollow = player;
+    }
+
 }
