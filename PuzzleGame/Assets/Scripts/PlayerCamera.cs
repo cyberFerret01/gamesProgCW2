@@ -24,6 +24,12 @@ public class PlayerCamera : MonoBehaviour
 
     void Start()
     {
+        objectToFollow = GameObject.FindGameObjectWithTag("Player");
+        Player = objectToFollow.transform;
+        centrePoint = Player;
+
+        transform.parent = Player;
+
         Obstruction = centrePoint;
         isInverted = objectToFollow.GetComponent<GravityBlock>().getIsInverted();
         
@@ -31,10 +37,12 @@ public class PlayerCamera : MonoBehaviour
 
     void LateUpdate()
     {
+
         objectToFollow = GameObject.FindGameObjectWithTag("Player");
         Player = objectToFollow.transform;
-        centrePoint = Player;   
-
+        centrePoint = Player;
+        Obstruction = centrePoint;
+        
         CamControl();
         ViewObstructed();
         isInverted = objectToFollow.GetComponent<GravityBlock>().getIsInverted();

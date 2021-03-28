@@ -170,7 +170,16 @@ public class switchShape : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
+            GameObject camera = GameObject.Find("Main_Camera");
+           
             shapeCollider();
+
+            if (cube.activeSelf) camera.transform.parent = cube.transform;
+            if (sphere.activeSelf) camera.transform.parent = sphere.transform;
+            if (cone.activeSelf) camera.transform.parent = cone.transform;
+            if (prism.activeSelf) camera.transform.parent = prism.transform;
+
+
         }
     }
 
