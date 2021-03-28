@@ -33,6 +33,7 @@ public class YellowBlock : MonoBehaviour
                     go.GetComponent<MeshCollider>().enabled = true;
                 }
             }
+
         }
         canPassYellow = false;
     

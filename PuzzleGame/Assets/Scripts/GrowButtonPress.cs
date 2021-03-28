@@ -28,7 +28,7 @@ public class GrowButtonPress : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            player.GetComponent<GrowBlock>().Grow();
+            player.GetComponent<GrowBlock>().Grow(new Vector3(+0.002f, +0.002f, +0.002f));
         }
     }
 

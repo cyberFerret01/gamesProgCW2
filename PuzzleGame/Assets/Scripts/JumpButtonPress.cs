@@ -28,7 +28,7 @@ public class JumpButtonPress : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            player.GetComponent<JumpBlock>().Jump();
+            player.GetComponent<JumpBlock>().Jump(new Vector3(0.0f, 10f, 0.0f));
         }
     }
 
