@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpButtonPress : MonoBehaviour
 {
-
+    public Vector3 magnitude = new Vector3(0,1,0);
     public Transform centrePoint;
     public float pressRange = 0.5f;
     public LayerMask playerLayers;
@@ -28,7 +28,7 @@ public class JumpButtonPress : MonoBehaviour
 
         foreach (Collider player in playersTouching)
         {
-            player.GetComponent<JumpBlock>().Jump();
+            player.GetComponent<JumpBlock>().Jump(magnitude);
         }
     }
 

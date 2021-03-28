@@ -41,8 +41,9 @@ public class JumpBlock : MonoBehaviour
 
     }
 
-    public void Jump()
+    public void Jump(Vector3 mag)
     {
+         jump = mag;
          isJumping = true;
          Debug.Log("jump");
     }
